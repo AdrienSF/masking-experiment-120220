@@ -32,10 +32,88 @@ ifi = Screen('GetFlipInterval', window);
 Screen('BlendFunction', window, 'GL_SRC_ALPHA', 'GL_ONE_MINUS_SRC_ALPHA');
 
 
-dispProbe(window, windowRect);
-sca;
 
-%%%%%%%%%%%FUNCTIONS
+%for block = 1:5
+%    runBlock();
+%    KbStrokeWait;
+%end
+
+dispCheckerboard(window, windowRect);
+dispProbe(window, windowRect);
+
+
+sca;
+%%%%%%%%%%%FUNCTIONS%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function d = runBlock(window, windowRect)
+    % type A no probe: 0
+    % type B no probe: 1
+    % type A with probe: 2
+    % type B with probe: 3
+    trials = [ zeros(1, 67) ones(1, 67) 2.*ones(1, 5) 3.*ones(1, 5) ]
+    trials = trials(randperm(144))
+
+    for trialType = trials
+        dispWaitScreen(window, windowRect);
+        KbStrokeWait;
+        runTrial(window, windowRect, trialType);
+    end
+
+end
+
+function d = runTrial(window, windowRect, trialType)
+
+    if trialType == 0 | trialType == 2
+        dispCross(window, windowRect);
+        %wait 705 ms
+
+        dispCheckerboard(window, windowRect);
+        %wait 96 ms
+
+        dispCross(window, windowRect);
+        %wait 96
+
+        dispImg();
+        if trialType == 2
+            dispProbe(window, windowRect);
+        end
+        %wait 33
+        
+        dispCross(window, windowRect);
+        if trialType == 2
+            dispProbe(window, windowRect);
+        end
+        %wait 96
+
+        dispCheckerboard(window, windowRect);
+        if trialType == 2
+            dispProbe(window, windowRect);
+        end
+        %wait 96 ms
+    else
+        dispCross(window, windowRect);
+        %wait 705 ms
+
+        dispCheckerboard(window, windowRect);
+        %wait 96 ms
+
+        dispImg();
+        if trialType == 3
+            dispProbe(window, windowRect);
+        end
+        %wait 33
+
+        dispCheckerboard(window, windowRect);
+        if trialType == 3
+            dispProbe(window, windowRect);
+        end
+        %wait 96 ms
+
+    end
+
+
+end
+
 
 function d = dispCross(window, windowRect)
     % Setup the text type for the window
@@ -77,8 +155,6 @@ function d = dispCross(window, windowRect)
     % Wait for a key press
     KbStrokeWait;
 
-    % Clear the screen
-    sca;
 
     d = 1;
 end
@@ -173,6 +249,9 @@ function d = dispProbe(window, windowRect)
 
 end
 
+function d = dispWaitScreen(window, windowRect)
+    dispCross(window, windowRect);
+end
 
 function d = dispImg()
 

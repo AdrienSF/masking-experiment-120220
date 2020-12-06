@@ -38,7 +38,7 @@ In each trial, a 992 ms fixation will be followed by a 96 ms mask, which in turn
 by the critical stimulus (Face/House/Noise), presented for 32 ms. Then, another mask will be 
 presented for 96 ms. In the conscious condition, the masks will be separate from the critical stimulus
 by 96 ms blanks (Figure 1).
-On 15% of the trials (randomly presented), the red probe will appear at a random location on the
+On ~15% of the trials (10/144 randomly presented), the red probe will appear at a random location on the
 area of the stimulation, starting from the onset of the critical stimulus and remaining on screen until
 the offset of the second mask (unconscious session) or blank (conscious session). Thus, its overall
 duration will be 129 ms. Subjects will be instructed to press the up arrow to indicate probe detection
