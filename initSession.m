@@ -7,8 +7,8 @@ function session = initSession(totalBlocks, AtrialsPerBlock, BtrialsPerBlock, pr
     session.matlabVersion = version;
     session.trialsPerBlock = trialsPerBlock;
     session.totalBlocks = totalBlocks;
-    session.current.block = 1;
-    session.current.trial = 1;
+    session.current.blockNum = 1;
+    session.current.trialNum = 1;
     session.isComplete = 0;
 
     for i = 1:totalBlocks
