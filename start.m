@@ -185,8 +185,7 @@ function d = dispCheckerboard(window, windowRect)
     % //filtering is used. For this example we don't want that, we want nearest
     % neighbour so we change the filter mode to zero
     filterMode = 0;
-    Screen('DrawTextures', window, checkerTexture, [],...
-        dstRect, 0, filterMode);
+    Screen('DrawTextures', window, checkerTexture, [],dstRect, 0, filterMode);
 
     % Flip to the screen
     Screen('Flip', window);
