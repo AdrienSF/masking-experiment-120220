@@ -14,15 +14,25 @@ end
 
 
 function runTrial(stimulus, isTypeA, hasProbe)
+    % check framerate
+    fps = Screen('GetFlipInterval', window);
+    % ms * fps = frames
+
     dispCross();
+    Screen('Flip', session.window);
+    waitFrames(.705*fps);
     %wait 705 ms
 
     dispCheckerboard();
+    Screen('Flip', session.window);
+    waitFrames(.096*fps);
     %wait 96 ms
 
     
     if isTypeA
         dispCross();
+        Screen('Flip', session.window);
+        waitFrames(.096*fps);
         %wait 96
     end
 
@@ -32,6 +42,8 @@ function runTrial(stimulus, isTypeA, hasProbe)
 
 
     dispStimulus();
+    Screen('Flip', session.window);
+    waitFrames(.033*fps);
     %wait 33
 
 
@@ -41,6 +53,8 @@ function runTrial(stimulus, isTypeA, hasProbe)
 
     if isTypeA
         dispCross();
+        Screen('Flip', session.window);
+        waitFrames(.096*fps);
         %wait 96
     end
 
@@ -50,6 +64,8 @@ function runTrial(stimulus, isTypeA, hasProbe)
 
 
     dispCheckerboard();
+    Screen('Flip', session.window);
+    waitFrames(.096*fps);
     %wait 96 ms
 
         

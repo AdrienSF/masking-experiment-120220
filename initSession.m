@@ -1,6 +1,8 @@
-function session = initSession(totalBlocks, AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock)
+function session = initSession(totalBlocks, AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock, w, windowRect)
     trialsPerBlock = AtrialsPerBlock + BtrialsPerBlock;
 
+    session.window = w;
+    session.windowRect = windowRect;
     session.subjectID = input('subjectID: ', 's');
     session.sessionID = input('sessionID: ', 's');
     session.CreationTime = datestr(now);

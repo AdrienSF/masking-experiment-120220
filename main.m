@@ -14,7 +14,7 @@ screenNumber = max(screens);
 
 [w, windowRect] = PsychImaging('OpenWindow', screenNumber, 0.5);
 
-session = initSession(5, 72, 72, 10);
+session = initSession(5, 72, 72, 10, w, windowRect);
 
 while ~session.isComplete
     runSession();
