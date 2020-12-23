@@ -3,6 +3,11 @@ sca;
 close all;
 clearvars;
 
+subjectID = input('subjectID: ', 's');
+sessionID = input('sessionID: ', 's');
+
+
+
 % Here we call some default settings for setting up Psychtoolbox
 PsychDefaultSetup(2);
 
@@ -14,7 +19,7 @@ screenNumber = max(screens);
 
 [w, windowRect] = PsychImaging('OpenWindow', screenNumber, 0.5);
 
-session = initSession(5, 72, 72, 10, w, windowRect);
+session = initSession(subjectID, sessionID, 5, 72, 72, 10, w, windowRect);
 
 session = runSession(session);
 

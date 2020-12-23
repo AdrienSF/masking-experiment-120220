@@ -1,10 +1,10 @@
-function session = initSession(totalBlocks, AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock, w, windowRect)
+function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock, w, windowRect)
     trialsPerBlock = AtrialsPerBlock + BtrialsPerBlock;
 
     session.window = w;
     session.windowRect = windowRect;
-    session.subjectID = input('subjectID: ', 's');
-    session.sessionID = input('sessionID: ', 's');
+    session.subjectID = subjectID;
+    session.sessionID = sessionID;
     session.CreationTime = datestr(now);
     session.matlabVersion = version;
     session.trialsPerBlock = trialsPerBlock;
@@ -14,7 +14,7 @@ function session = initSession(totalBlocks, AtrialsPerBlock, BtrialsPerBlock, pr
     session.isComplete = 0;
 
     for i = 1:totalBlocks
-        session.blocks(i) = initTrialInfo(AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock);
+        session.blocks(i).trials = initTrialInfo(AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock);
     end
 
     % allTrials = initTrialInfo(AtrialsPerBlock*totalBlocks, BtrialsPerBlock*totalBlocks, probeTrialsPerBlock*totalBlocks)

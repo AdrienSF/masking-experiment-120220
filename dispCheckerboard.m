@@ -1,4 +1,4 @@
-function dispCheckerboard()
+function dispCheckerboard(session)
     [xCenter, yCenter] = RectCenter(session.windowRect);
 
     toTexture = repmat(eye(2), 4, 4);

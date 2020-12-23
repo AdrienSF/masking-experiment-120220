@@ -1,4 +1,4 @@
-function dispStimulus()
+function dispStimulus(session)
     disp('dispStimulus stub');
 
 end

@@ -3,7 +3,7 @@ function runSession(session)
         while session.current.trialNum <= session.trialsPerBlock
 
             trialInfo = session.blocks(session.current.blockNum).trials(session.current.trialNum);
-            runTrial(trialInfo.stimulus, trialInfo.isTypeA, trialInfo.hasProbe);
+            runTrial(trialInfo.stimulus, trialInfo.isTypeA, trialInfo.hasProbe, session);
 
             session.current.trialNum = session.current.trialNum + 1;
         end
@@ -13,57 +13,57 @@ function runSession(session)
 end
 
 
-function runTrial(stimulus, isTypeA, hasProbe)
+function runTrial(stimulus, isTypeA, hasProbe, session)
     % check framerate
     fps = Screen('GetFlipInterval', window);
     % ms * fps = frames
 
-    dispCross();
+    dispCross(session);
     Screen('Flip', session.window);
     waitFrames(.705*fps);
     %wait 705 ms
 
-    dispCheckerboard();
+    dispCheckerboard(session);
     Screen('Flip', session.window);
     waitFrames(.096*fps);
     %wait 96 ms
 
     
     if isTypeA
-        dispCross();
+        dispCross(session);
         Screen('Flip', session.window);
         waitFrames(.096*fps);
         %wait 96
     end
 
     if hasProbe
-        dispProbe();
+        dispProbe(session);
     end
 
 
-    dispStimulus();
+    dispStimulus(session);
     Screen('Flip', session.window);
     waitFrames(.033*fps);
     %wait 33
 
 
     if hasProbe
-        dispProbe();
+        dispProbe(session);
     end
 
     if isTypeA
-        dispCross();
+        dispCross(session);
         Screen('Flip', session.window);
         waitFrames(.096*fps);
         %wait 96
     end
 
     if hasProbe
-        dispProbe();
+        dispProbe(session);
     end
 
 
-    dispCheckerboard();
+    dispCheckerboard(session);
     Screen('Flip', session.window);
     waitFrames(.096*fps);
     %wait 96 ms

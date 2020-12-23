@@ -1,4 +1,4 @@
-function dispProbe()
+function dispProbe(session)
 
     [xCenter, yCenter] = RectCenter(session.windowRect);
     dotColor = [1 0 0];

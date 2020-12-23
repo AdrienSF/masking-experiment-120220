@@ -1,4 +1,4 @@
-function dispCross()
+function dispCross(session)
     fixColor = 0;
     fixCrossDimPix = 10;
     lineWidthPix = 4;
