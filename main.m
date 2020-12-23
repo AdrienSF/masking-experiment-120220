@@ -16,9 +16,7 @@ screenNumber = max(screens);
 
 session = initSession(5, 72, 72, 10, w, windowRect);
 
-while ~session.isComplete
-    runSession();
-end
+session = runSession(session);
 
 
 % Wait for a key press

@@ -1,15 +1,15 @@
-function runSession()
+function runSession(session)
     while session.current.blockNum <= session.totalBlocks
         while session.current.trialNum <= session.trialsPerBlock
 
             trialInfo = session.blocks(session.current.blockNum).trials(session.current.trialNum);
             runTrial(trialInfo.stimulus, trialInfo.isTypeA, trialInfo.hasProbe);
 
-            session.current.trialNum = session.current.trialNum + 1
+            session.current.trialNum = session.current.trialNum + 1;
         end
-        session.current.blockNum = session.current.blockNum + 1
+        session.current.blockNum = session.current.blockNum + 1;
     end
-
+    return session;
 end
 
 
