@@ -39,9 +39,9 @@ function allTrials = initTrialInfo(totalAtrials, totalBtrials, totalProbeTrials)
         trials(i).hasProbe = 1;
     end
 
-    % for i = 1:totalTrials
-    %     trials(i).stimulus = ?
-    % end
+    for i = 1:totalTrials
+        trials(i).stimulus = 'dummy';
+    end
 
     allTrials = trials(randperm(totalTrials))
 

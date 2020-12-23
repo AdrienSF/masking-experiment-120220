@@ -1,6 +1,6 @@
 function dispProbe(session)
 
-    [xCenter, yCenter] = RectCenter(session.windowRect);
+    % [xCenter, yCenter] = RectCenter(session.windowRect);
     dotColor = [1 0 0];
     dotSizePix = 20;
     
