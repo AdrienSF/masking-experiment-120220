@@ -12,6 +12,7 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
     session.current.blockNum = 1;
     session.current.trialNum = 1;
     session.isComplete = 0;
+    session.intermissionText = 'Press shift+a to abort experiment. \nPress any other key to continue.';
 
     for i = 1:totalBlocks
         session.blocks(i).trials = initTrialInfo(AtrialsPerBlock, BtrialsPerBlock, probeTrialsPerBlock);

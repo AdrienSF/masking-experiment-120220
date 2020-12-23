@@ -18,6 +18,7 @@ screens = Screen('Screens');
 screenNumber = max(screens);
 
 [w, windowRect] = PsychImaging('OpenWindow', screenNumber, 0.5);
+Screen('TextSize', w, 80);
 
 session = initSession(subjectID, sessionID, 5, 72, 72, 10, w, windowRect);
 
