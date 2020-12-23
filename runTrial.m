@@ -7,19 +7,19 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispCross(session);
     Screen('Flip', session.window);
-    waitFrames(.705/flip_interval);
+    waitFrames(.705/flip_interval, session);
     %wait 705 ms
 
     dispCheckerboard(session);
     Screen('Flip', session.window);
-    waitFrames(.096/flip_interval);
+    waitFrames(.096/flip_interval, session);
     %wait 96 ms
 
     
     if isTypeA
         dispCross(session);
         Screen('Flip', session.window);
-        waitFrames(.096/flip_interval);
+        waitFrames(.096/flip_interval, session);
         %wait 96
     end
 
@@ -30,7 +30,7 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispStimulus(session);
     Screen('Flip', session.window);
-    waitFrames(.033/flip_interval);
+    waitFrames(.033/flip_interval, session);
     %wait 33
 
 
@@ -41,7 +41,7 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
     if isTypeA
         dispCross(session);
         Screen('Flip', session.window);
-        waitFrames(.096/flip_interval);
+        waitFrames(.096/flip_interval, session);
         %wait 96
     end
 
@@ -52,7 +52,7 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispCheckerboard(session);
     Screen('Flip', session.window);
-    waitFrames(.096/flip_interval);
+    waitFrames(.096/flip_interval, session);
     %wait 96 ms
 
         
