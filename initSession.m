@@ -27,7 +27,7 @@ end
 
 % [WARNING]: Probe occurance ranom. Not ballanced between trials A and B
 function allTrials = initTrialInfo(totalAtrials, totalBtrials, totalProbeTrials)
-    totalTrials = totalAtrials+totalBtrials
+    totalTrials = totalAtrials + totalBtrials;
     for i = 1:totalAtrials
         trials(i).isTypeA = 1;
         trials(i).hasProbe = 0;
@@ -44,7 +44,7 @@ function allTrials = initTrialInfo(totalAtrials, totalBtrials, totalProbeTrials)
         trials(i).stimulus = 'dummy';
     end
 
-    allTrials = trials(randperm(totalTrials))
+    allTrials = trials(randperm(totalTrials));
 
 end
 % five blocks of 144 trials (48 faces, 48 houses, 48 noise stimuli, so that each stimulus repeated four times within a block).
