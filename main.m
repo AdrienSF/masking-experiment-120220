@@ -24,8 +24,4 @@ session = initSession(subjectID, sessionID, 5, 72, 72, 10, w, windowRect);
 
 session = runSession(session);
 
-
-% Wait for a key press
-KbStrokeWait;
-
 sca;
