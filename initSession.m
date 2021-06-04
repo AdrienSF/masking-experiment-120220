@@ -19,6 +19,10 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
     
     % PARAMETERS:
     session.params.stimContrast = 20;
+    session.params.stimWait = .033;
+    session.params.checkerBoardWait = 0.096;
+    session.params.startWait = .704;
+    session.params.blankWait = .096;
     
     faceFilePattern = fullfile(session.stim.face.folderPath, char(strcat('*', session.stim.fileExtension)));
     houseFilePattern = fullfile(session.stim.house.folderPath, char(strcat('*', session.stim.fileExtension)));

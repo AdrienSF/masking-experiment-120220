@@ -7,22 +7,19 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispCross(session);
     vbl = Screen('Flip', session.window);
-    % waitFrames(.705/flip_interval, session);
     %wait 705 ms
 
     dispCheckerboard(session);
     dispCross(session);
-    WaitSecs('UntilTime', vbl + .704);
+    WaitSecs('UntilTime', vbl + session.params.startWait);
     vbl = Screen('Flip', session.window);
-    % waitFrames(.096/flip_interval, session);
     %wait 96 ms
 
     
     if isTypeA
         dispCross(session);
-        WaitSecs('UntilTime', vbl + .096);
+        WaitSecs('UntilTime', vbl + session.params.checkerBoardWait);
         vbl = Screen('Flip', session.window);
-        % waitFrames(.096/flip_interval, session);
         %wait 96
     end
 
@@ -33,37 +30,53 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispStimulus(session);
     dispCross(session);
-    WaitSecs('UntilTime', vbl + .096);
+    if isTypeA
+        WaitSecs('UntilTime', vbl + session.params.blankWait);
+    else
+        WaitSecs('UntilTime', vbl + session.params.checkerBoardWait);
+    end
     vbl = Screen('Flip', session.window);
-    % waitFrames(.033/flip_interval, session);
     %wait 33
 
 
     if hasProbe
         dispProbe(session);
     end
-A
+
     if isTypeA
         dispCross(session);
         dispCross(session);
-        WaitSecs('UntilTime', vbl + 2.033);
+        WaitSecs('UntilTime', vbl + session.params.stimWait);
         vbl = Screen('Flip', session.window);
-        % waitFrames(.096/flip_interval, session);
         %wait 96
+
+
+        if hasProbe
+            dispProbe(session);
+        end
+
+
+        dispCheckerboard(session);
+        dispCross(session);
+        WaitSecs('UntilTime', vbl + session.params.blankWait);
+        vbl = Screen('Flip', session.window);
+        %wait 96 ms
+
+    else:
+
+        if hasProbe
+            dispProbe(session);
+        end
+
+
+        dispCheckerboard(session);
+        dispCross(session);
+        WaitSecs('UntilTime', vbl + session.params.stimWait);
+        vbl = Screen('Flip', session.window);
+        %wait 96 ms
+
     end
 
-    if hasProbe
-        dispProbe(session);
-    end
-
-
-    dispCheckerboard(session);
-    dispCross(session);
-    WaitSecs('UntilTime', vbl + .096);
-    vbl = Screen('Flip', session.window);
-    % waitFrames(.096/flip_interval, session);
-    %wait 96 ms
-
-    WaitSecs('UntilTime', vbl + .096);
+    WaitSecs('UntilTime', vbl + session.params.checkerBoardWait);
 
 end
