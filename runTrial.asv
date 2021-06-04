@@ -7,12 +7,13 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
 
     dispCross(session);
     vbl = Screen('Flip', session.window);
+    WaitSecs('UntilTime', vbl + .704);
     % waitFrames(.705/flip_interval, session);
     %wait 705 ms
 
     dispCheckerboard(session);
     dispCross(session);
-    WaitSecs('UntilTime', vbl + .704);
+    WaitSecs('UntilTime', vbl + .096);
     vbl = Screen('Flip', session.window);
     % waitFrames(.096/flip_interval, session);
     %wait 96 ms
@@ -42,11 +43,11 @@ function runTrial(stimulus, isTypeA, hasProbe, session)
     if hasProbe
         dispProbe(session);
     end
-A
+
     if isTypeA
         dispCross(session);
         dispCross(session);
-        WaitSecs('UntilTime', vbl + 2.033);
+        WaitSecs('UntilTime', vbl + .033);
         vbl = Screen('Flip', session.window);
         % waitFrames(.096/flip_interval, session);
         %wait 96

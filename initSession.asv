@@ -17,9 +17,6 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
     session.stim.house.folderPath = 'houseStim';
     session.stim.fileExtension = '.pcx';
     
-    % PARAMETERS:
-    session.params.stimContrast = 20;
-    
     faceFilePattern = fullfile(session.stim.face.folderPath, char(strcat('*', session.stim.fileExtension)));
     houseFilePattern = fullfile(session.stim.house.folderPath, char(strcat('*', session.stim.fileExtension)));
     
@@ -29,9 +26,7 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
         ind = mod(i-1,nFaces)+1;
         [img, color_map] = imread([session.stim.face.fileNames(ind).folder '\' session.stim.face.fileNames(ind).name]);
         img = addNoise(img, .25);
-        img(img==255) = 128+session.params.stimContrast;
-        img(img==0) = 128-session.params.stimContrast;
-        session.stim.face.textures(i) = Screen('MakeTexture', session.window, ind2rgb(img, color_map*255));
+        session.stim.face.textures(i) = Screen('MakeTexture', session.window, ind2rgb(img, color_map*));
     end
     
     session.stim.house.fileNames = dir(houseFilePattern);
@@ -40,8 +35,6 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
         ind = mod(i-1,nHouses)+1;
         [img, color_map] = imread([session.stim.house.fileNames(ind).folder '\' session.stim.house.fileNames(ind).name]);
         img = addNoise(img, .25);
-        img(img==255) = 128+session.params.stimContrast;
-        img(img==0) = 128-session.params.stimContrast;
         session.stim.house.textures(i) = Screen('MakeTexture', session.window, ind2rgb(img, color_map*255));
     end
        
@@ -50,8 +43,6 @@ function session = initSession(subjectID, sessionID, totalBlocks, AtrialsPerBloc
         ind = mod(i-1,nNoise)+1;
         [img, color_map] = imread([session.stim.house.fileNames(ind).folder '\' session.stim.house.fileNames(ind).name]);
         img = addNoise(img, .5);
-        img(img==255) = 128+session.params.stimContrast;
-        img(img==0) = 128-session.params.stimContrast;
         session.stim.noise.textures(i) = Screen('MakeTexture', session.window, ind2rgb(img, color_map*255));
     end
         

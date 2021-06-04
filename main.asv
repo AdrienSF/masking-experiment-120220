@@ -17,11 +17,11 @@ screens = Screen('Screens');
 % Draw to the external screen if avaliable
 screenNumber = max(screens);
 
-[w, windowRect] = Screen('OpenWindow',0, 128,[0 0 640 480],32,2);
+[w, windowRect] = Screen('OpenWindow',0, 128,[],32,2);
 Screen('TextSize', w, 40);
 
 dim = round(windowRect(3)/4);
-[xCenter, yCenter] = RectCenter(windowRect);
+[xCenter, yCenter] = RectCenter(session.windowRect);
 stimRect = CenterRectOnPointd([0 0 dim dim], xCenter, yCenter);
 session = initSession(subjectID, sessionID, 5, 63, 63, 19, w, stimRect);
 

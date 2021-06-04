@@ -15,7 +15,7 @@ houses used by Schurger et al. (2015). The drawings are black, presented grey ba
 180, 180, 180). Additional noise was added to the stimuli by randomly selecting 25% of the pixels
 and replacing their color from black to grey or vice versa. In addition, noise stimuli will be prepared
 for each of the stimuli by randomly selecting 50% of the pixels and performing the same
-replacement as described above. An 8 X 8 checkerboard display will be used as a mask. All stimuli
+replacement as described above. A checkerboard display will be used as a mask. All stimuli
 will be presented at 6 X 6 degrees of visual angle (DVA). Finally, a red (RGB: 200, 0, 0) circle with
 a 0.5 DVA radius will serve as a probe.
 
@@ -30,7 +30,7 @@ at a random location on the surface of the critical stimulus, remaining on scree
 and second blank (conscious) or mask (unconscious).
 
 ## Procedure
-The experiment will include five blocks of 144 trials (48 faces, 48 houses, 48 noise stimuli, so that
+The experiment will include five blocks of 126 trials (42 faces, 42 houses, 42 noise stimuli, so that
 each stimulus repeated four times within a block). Half the trials will belong to the conscious
 condition, and half to the unconscious condition, randomly intermixed. Participants will be given
 self-paced rest breaks after every block. Trial onset will also be self-paced.
@@ -38,7 +38,7 @@ In each trial, a 992 ms fixation will be followed by a 96 ms mask, which in turn
 by the critical stimulus (Face/House/Noise), presented for 32 ms. Then, another mask will be 
 presented for 96 ms. In the conscious condition, the masks will be separate from the critical stimulus
 by 96 ms blanks (Figure 1).
-On ~15% of the trials (10/144 randomly presented), the red probe will appear at a random location on the
+On ~15% of the trials (19/126 randomly presented), the red probe will appear at a random location on the
 area of the stimulation, starting from the onset of the critical stimulus and remaining on screen until
 the offset of the second mask (unconscious session) or blank (conscious session). Thus, its overall
 duration will be 129 ms. Subjects will be instructed to press the up arrow to indicate probe detection

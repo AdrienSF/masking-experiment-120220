@@ -16,8 +16,8 @@ function sess = runSession(session)
 
             session.current.trialNum = session.current.trialNum + 1;
         end
-        fname = sprintf('subj%s_sess%s_block%02d_bkp.mat',session.subjectID,session.sessionID,session.current.blockNum);
-        save(fname,'session');
+        fname = sprintf('subj%02d_sess%02d_block%02d_bkp.mat'
+        save(session)
         session.current.trialNum = 0;
         session.current.blockNum = session.current.blockNum + 1;
     end
